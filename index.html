@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Your Reveal.js Presentation</title>
+    <meta name="description" content="A simple reveal.js presentation using CDN">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Reveal.js core CSS from jsDelivr CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+
+    <!-- Reveal.js theme -->
+    <!-- Change 'black.css' to any other theme available in reveal.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css" id="theme">
+
+    <!-- Optional Reveal.js plugins CSS (e.g., for code syntax highlighting) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <section data-background="assets/thumbnail.jpg"></section>
+
+            <section>
+                <section>
+                    <h2>Who is this for?</h2>
+                    <p class="fragment">Anyone who wants to get started with generative AI</p>
+                </section>
+
+                <section>
+                    <h2>What do I need?</h2>
+                    <h3>(Windows/Linux)</h3>
+                    <p>GPU (4GB+ VRAM)<br>RAM (12GB+)<br>20GB+ space</p>
+                </section>
+                <section>
+                    <h2>What do I need?</h2>
+                    <h3>(MacOS)</h3>
+                    <p>Apple Silicon (M1, M2, M3)<br>RAM (12GB+)<br>20GB+ space</p>
+                </section>
+            </section>
+
+            <section>
+                <h2>The plan for this stream</h2>
+                <ol>
+                    <li class="fragment">Install Stability Matrix</li>
+                    <li class="fragment">Learn how to use Stability Matrix</li>
+                    <li class="fragment">Install ComfyUI</li>
+                    <li class="fragment">Learn how to use ComfyUI</li>
+                    <li class="fragment">Generate the image from the thumbnail</li>
+                </ol>
+            </section>
+            <section>
+                <section>
+                    <h2>Install Stability Matrix</h2>
+                    <p>Search for "Stability Matrix"<br>or click on <a href="https://lykos.ai/downloads"
+                            target="_blank">this link</a></p>
+                </section>
+            </section>
+            <section>
+                <h2>Creating a prompt</h2>
+                <section>
+                    <h3>Reference image</h3>
+                    <img src="https://i.pinimg.com/564x/43/d0/4b/43d04bc251d8beebd5eff5645251e0ea.jpg" height="400"
+                        alt="">
+                    <p style="font-size: 1rem; margin: 0;">(<a href="https://pin.it/6PlY3Wgsh"
+                            target="_blank">Source</a>)</p>
+                </section>
+                <section>
+                    <h3>Image Captioning</h3>
+                    <p>Use a captioning tool such as <a
+                            href="https://huggingface.co/spaces/fancyfeast/joy-caption-alpha-two"
+                            target="_blank">JoyCaption</a></p>
+                    <p style="font-size: 2rem;" class="fragment">sepia tone, close-up of a person's head and shoulders,
+                        wearing a hooded cloak with the hood up, covering their face, only the eyes visible, soft fabric
+                        texture, monochromatic, minimalist, high contrast, no background, focus on the hood and face,
+                        dramatic lighting, vintage feel, mystery, intrigue, subtle folds in the fabric, serene
+                        expression, neutral colors, fine art photography.</p>
+                </section>
+                <section>
+                    <h2>Using AI to generate prompts</h2>
+                    <p>Install <a href="https://ollama.com/" target="_blank">Ollama</a> and run the following line in
+                        your terminal/command line (<a href="https://ollama.com/impactframes/llama3_ifai_sd_prompt_mkr_q4km" target="_blank">model information</a>):</p><code
+                        style="font-size: 2rem;">ollama run impactframes/llama3_ifai_sd_prompt_mkr_q4km</code>
+                </section>
+                <section>
+                    <p>Or create/download a batch file that runs the command for you (Windows only):</p>
+                    <a href="assets/prompt-generator.bat">prompt-generator.bat</a>
+                </section>
+            </section>
+            <section>
+                <h2>Image to image generation</h2>
+                <iframe src="https://museo.app/" height="500" width="800" frameborder="0"></iframe>
+                <p>Visit <a href="https://museo.app/" target="_blank">mueseo.app</a></p>
+            </section>
+            <section>
+                <h2>Using custom workflows</h2>
+                <section>
+                    <img src="assets/img2img-example-workflow.png" height="500">
+                </section>
+                <section>
+                    <img src="assets/reference-image-01.jpg" height="500">
+                    <p style="font-size: 1rem; margin: 0;">The Miriam and Ira D. Wallach Division of Art, Prints and
+                        Photographs: Print Collection, The New York Public Library. "Masks and hats" The New York Public
+                        Library Digital Collections. 1688.
+                        https://digitalcollections.nypl.org/items/82093a00-5535-0135-dab1-03ff7afede6c</p>
+                </section>
+                <section>
+                    <h3>Seamless Tile Generator</h3>
+                    <img src="assets/seamless-tile-workflow.png" height="400">
+                </section>
+                <section><h3>Image to video workflow</h3>
+                <iframe src="https://blog.heibara.ai/posts/stable-video-diffusion/" frameborder="0" height="450" width="800" style="margin: 0;"></iframe><p style="font-size: 2rem; margin: 0;">Visit the <a href="https://blog.heibara.ai/posts/stable-video-diffusion/">Heibara AI Blog</a></p></section>
+            </section>
+        </div>
+    </div>
+
+    <!-- Reveal.js core JS from jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+
+    <!-- Optional Reveal.js plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+
+    <script>
+        // Initialize Reveal.js
+        Reveal.initialize({
+            hash: true, // Enables URL fragments so you can link to specific slides
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            keyboard: {
+                39: 'next',
+                37: 'prev'
+            },
+            // Optional configuration options
+            slideNumber: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide' // Choose from 'none', 'fade', 'slide', 'convex', 'concave', 'zoom'
+        });
+    </script>
+</body>
+
+</html>

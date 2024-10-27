@@ -1,0 +1,1 @@
+ollama run impactframes/llama3_ifai_sd_prompt_mkr_q4km
