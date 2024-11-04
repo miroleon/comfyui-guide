@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ComfyUI Guide</title>
+    <meta name="description" content="A guide for ComfyUI, accompanied by a YouTube video.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Reveal.js core CSS from jsDelivr CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+
+    <!-- Reveal.js theme -->
+    <!-- Change 'black.css' to any other theme available in reveal.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css" id="theme">
+
+    <!-- Optional Reveal.js plugins CSS (e.g., for code syntax highlighting) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <section data-background="assets/controlnet-thumbnail.jpg"></section>
+
+            <section>
+                <section>
+                    <h2>Need to catch up?</h2>
+                    <iframe width="889" height="500"
+                        src="https://www.youtube-nocookie.com/embed/d3yqBZwF0hM?si=5dnxN6h7DoROBxLj&amp;start=120"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </section>
+
+                <section>
+                    <h2>The plan for this stream</h2>
+                    <ol>
+                        <li class="fragment">Quick Setup</li>
+                        <li class="fragment">Find the right ControlNet models</li>
+                        <li class="fragment">Get started with ControlNet in ComfyUI</li>
+                        <li class="fragment">Do some more creative work with depth maps</li>
+                        <li class="fragment">Generate the image from the thumbnail</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Quick Run Through the Requirements and Setup</h2>
+                </section>
+
+                <section>
+                    <h2>What do I need?</h2>
+                    <h3>(Windows/Linux)</h3>
+                    <p>GPU (4GB+ VRAM)<br>RAM (12GB+)<br>20GB+ space</p>
+                </section>
+                <section>
+                    <h2>What do I need?</h2>
+                    <h3>(MacOS)</h3>
+                    <p>Apple Silicon (M1, M2, M3)<br>RAM (12GB+)<br>20GB+ space</p>
+                </section>
+            </section>
+            <section>
+                <h2>Install Stability Matrix</h2>
+                <p>Search for "Stability Matrix"<br>or click on <a href="https://lykos.ai/downloads"
+                        target="_blank">this link</a></p>
+            </section>
+            <section>
+                <section>
+                    <h3>SDXL ControlNet Workflow</h3>
+                    <img src="assets/sdxl-controlnet-workflow-01.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Or <a href="assets/sdxl-controlnet-workflow-01.json"
+                            download="sdxl-controlnet-workflow-01.json" target="_blank">download</a> as JSON</p>
+                </section>
+                <section>
+                    <h3>SDXL ControlNet References</h3>
+                    <img src="assets/controlnet-reference-01.jpg" height="400">
+                    <img src="assets/gradient-02.png" height="400">
+                </section>
+                <section>
+                    <h3>SD15 ControlNet Workflow</h3>
+                    <img src="assets/sd15-controlnet-workflow-01.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Or <a href="assets/sd15-controlnet-workflow-01.json"
+                            download="sd15-controlnet-workflow-01.json" target="_blank">download</a> as JSON</p>
+                </section>
+                <section>
+                    <h3>SD15 ControlNet References</h3>
+                    <img src="assets/controlnet-reference-01.jpg" height="400">
+                    <img src="assets/gradient-02.png" height="400">
+                </section>
+                <section>
+                    <h3>Sources for ControlNet References</h3>
+                    <ul>
+                        <li>General Public Domain References</li>
+                        <ul>
+                            <li><a href="https://museo.app/" target="_blank">Museo</a></li>
+                        </ul>
+                        <li>Photographic References</li>
+                        <ul>
+                            <li><a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
+                        </ul>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Working with Unsplash References</h3>
+                    <img src="https://images.unsplash.com/photo-1730313227484-898a7b98bab5?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        height="400">
+                    <img src="assets/sdxl-controlnet-unsplash.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Reference on <a
+                            href="https://unsplash.com/photos/a-person-standing-in-a-field-of-tall-grass-z6YwjfZVOhs"
+                            target="_blank">Unsplash</a></p>
+                </section>
+            </section>
+
+            <section>
+                <h2>Recap</h2>
+                <ul>
+                    <li class="fragment">You can find the ControlNet models via the Hugging Face section in the model
+                        browser in Stability Matrix</li>
+                    <li class="fragment">ControlNet models have to be compatible with the Checkpoint model!</li>
+                    <li class="fragment">SD15 ControlNets only work with SD15 models</li>
+                    <li class="fragment">SDXL ControlNets only work with SDXL models</li>
+                </ul>
+            </section>
+
+            <section>
+                <section>
+                    <h3>Video to Depth Map Workflow</h3>
+                    <img src="assets/video-to-gradient-map-workflow-v01.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Or <a href="assets/video-to-gradient-map-workflow-v01.json"
+                            download="video-to-gradient-map-workflow-v01.json" target="_blank">download</a> as JSON</p>
+                </section>
+                <section>
+                    <h3>Video to Depth Map References</h3>
+                    <video src="assets/4153811-hd_1366_720_50fps.mp4" height="400" autoplay loop muted></video>
+                    <p style="font-size: 1rem; margin: 0;"><a href="https://videos.pexels.com/video-files/4153811/4153811-hd_1366_720_50fps.mp4" target="_blank">Pexels Reference</a></p>
+                </section>
+                <section>
+                    <h3>Video to Depth Map References</h3>
+                    <img src="assets/gradient-01.png" height="400">
+                </section>
+                <section>
+                    <h3>Result</h3>
+                    <video src="assets/gradient-video-01_00004.mp4" autoplay muted loop></video>
+                </section>
+                <section>
+                    <h3>Creating the Thumbnail</h3>
+                    <img src="assets/reference-depth-map-01.png" height="400">
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <!-- Reveal.js core JS from jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+
+    <!-- Optional Reveal.js plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+
+    <script>
+        // Initialize Reveal.js
+        Reveal.initialize({
+            hash: true, // Enables URL fragments so you can link to specific slides
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            keyboard: {
+                39: 'next',
+                37: 'prev'
+            },
+            // Optional configuration options
+            slideNumber: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide' // Choose from 'none', 'fade', 'slide', 'convex', 'concave', 'zoom'
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1004 @@
+{
+  "last_node_id": 70,
+  "last_link_id": 46,
+  "nodes": [
+    {
+      "id": 14,
+      "type": "Image Gradient Map",
+      "pos": {
+        "0": 1361.176513671875,
+        "1": 83.64241027832031
+      },
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 32
+        },
+        {
+          "name": "gradient_image",
+          "type": "IMAGE",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            33
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Gradient Map"
+      },
+      "widgets_values": [
+        "true"
+      ]
+    },
+    {
+      "id": 60,
+      "type": "Note",
+      "pos": {
+        "0": 458.99884033203125,
+        "1": 1228.978515625
+      },
+      "size": {
+        "0": 381.6781005859375,
+        "1": 170.35443115234375
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "You can use this part of the workflow to generate an image of a gradient to use later. You can also use any gradient image from the internet, though.\n\nThe first value (e.g. 0 and 100:) determines the position of the colour in the gradient.\n\nThe second value is the RGB code of the colour.\n\nYou can add as many colours to the scheme as you like!"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 58,
+      "type": "Note",
+      "pos": {
+        "0": 302.61932373046875,
+        "1": 208.07159423828125
+      },
+      "size": {
+        "0": 303.604248046875,
+        "1": 155.41917419433594
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "1. Select your input video and make any changes you want to make\n\n2. Choose your Depth model and resolution (ideally according to video input resolution); the \"vits14\" model usually works fine and is the fastest\n\n3. Save your output to a dedicated folder (in this case, we start with \"gradient-pre-01/frame\")"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 17,
+      "type": "LoadImage",
+      "pos": {
+        "0": 1011,
+        "1": 407
+      },
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            15
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "gradient_00001_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 59,
+      "type": "Note",
+      "pos": {
+        "0": 1363,
+        "1": 208
+      },
+      "size": {
+        "0": 308.9662780761719,
+        "1": 260.3861083984375
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "1. Select the gradient that you want to use. Either choose your generated gradient or use any from the internet.\n\n2. Make sure the mode of the Load Image Batch is set to \"incremental_image\" and that the path is correctly set according to the images you generated in the first step of the workflow.\n\n3. IMPORTANT: In the ComfyUI side menu, click on \"Extra options\" and set \"Batch count\" to the number of frames your image sequence has!\n\n4. You can flip the gradient in the \"Image Gradient Map\" node.\n\n5. Set a dedicated directory for your \"Save Image\" node. In this case, we use \"gradient-applied-01/frame\"."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 56,
+      "type": "VHS_LoadImagesPath",
+      "pos": {
+        "0": 2057,
+        "1": 86.38487243652344
+      },
+      "size": {
+        "0": 266.84625244140625,
+        "1": 194
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            42
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadImagesPath"
+      },
+      "widgets_values": {
+        "directory": "./output/gradient-applied-01/",
+        "image_load_cap": 0,
+        "skip_first_images": 0,
+        "select_every_nth": 1,
+        "choose folder to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1,
+            "filename": "./output/gradient-applied-01/",
+            "type": "path",
+            "format": "folder"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 61,
+      "type": "Note",
+      "pos": {
+        "0": 2065,
+        "1": 325.3848876953125
+      },
+      "size": {
+        "0": 255.59310913085938,
+        "1": 154.5202178955078
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "1. IMPORTANT: Turn off the \"Extra options\" in the ComfyUI side menu or set the batch count back to 1!\n\n2. Select your input path according to the last step of the workflow. In this case, \"./output/gradient-applied-01/\"\n\n3. Set your video settings in the \"Video Combine\" node as desired."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 30,
+      "type": "DepthAnythingPreprocessor",
+      "pos": {
+        "0": 300.61932373046875,
+        "1": 84.07154846191406
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            31
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DepthAnythingPreprocessor"
+      },
+      "widgets_values": [
+        "depth_anything_vits14.pth",
+        1024
+      ]
+    },
+    {
+      "id": 34,
+      "type": "SaveImage",
+      "pos": {
+        "0": 649.6192626953125,
+        "1": 86.07154846191406
+      },
+      "size": {
+        "0": 315,
+        "1": 270
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 31
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "gradient-pre-01/frame"
+      ]
+    },
+    {
+      "id": 40,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1703,
+        "1": 84
+      },
+      "size": {
+        "0": 315,
+        "1": 270
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 33
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "gradient-applied-01/frame"
+      ]
+    },
+    {
+      "id": 62,
+      "type": "Note",
+      "pos": {
+        "0": 19,
+        "1": 887
+      },
+      "size": {
+        "0": 381.6781005859375,
+        "1": 170.35443115234375
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "General Tip:\nBypass whole groups by right-clicking on the group and selecting \"Bypass Group Nodes\".\nUn-bypass whole groups by right-clicking on the group and selecting \"Set Group Nodes to Always\".\nYou can bypass and un-bypass individual nodes with the shortcut \"Ctrl+B\".\nAlways bypass the groups that you're not using!"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 25,
+      "type": "VHS_LoadVideo",
+      "pos": {
+        "0": 22.619335174560547,
+        "1": 84.07154846191406
+      },
+      "size": {
+        "0": 247.455078125,
+        "1": 286
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            29
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "4769556-hd_720_1366_25fps.mp4",
+        "force_rate": 25,
+        "force_size": "Custom Height",
+        "custom_width": 512,
+        "custom_height": 1024,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "force_rate": 25,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1,
+            "filename": "4769556-hd_720_1366_25fps.mp4",
+            "type": "input",
+            "format": "video/mp4"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 35,
+      "type": "Load Image Batch",
+      "pos": {
+        "0": 1014,
+        "1": 84
+      },
+      "size": {
+        "0": 315,
+        "1": 270
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            32
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "filename_text",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Load Image Batch"
+      },
+      "widgets_values": [
+        "incremental_image",
+        646,
+        "increment",
+        0,
+        "Batch 001",
+        "./output/gradient-pre-01/",
+        "*",
+        "false",
+        "true"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "VHS_VideoCombine",
+      "pos": {
+        "0": 2343,
+        "1": 79.38487243652344
+      },
+      "size": [
+        266.607177734375,
+        796.0215511322021
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 42
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 25,
+        "loop_count": 0,
+        "filename_prefix": "gradient-video-01",
+        "format": "video/h265-mp4",
+        "pix_fmt": "yuv420p10le",
+        "crf": 16,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "gradient-video-01_00001.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h265-mp4",
+            "frame_rate": 25
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 16,
+      "type": "SaveImage",
+      "pos": {
+        "0": 878.4865112304688,
+        "1": 980.2023315429688
+      },
+      "size": {
+        "0": 315,
+        "1": 270
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "gradient"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "Image Generate Gradient",
+      "pos": {
+        "0": 453.323486328125,
+        "1": 981.8123779296875
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            14
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Generate Gradient"
+      },
+      "widgets_values": [
+        512,
+        512,
+        "horizontal",
+        0,
+        "0:44, 48, 122\n75:223, 82, 124\n100:252, 255, 160"
+      ]
+    },
+    {
+      "id": 63,
+      "type": "Note",
+      "pos": {
+        "0": 463.998779296875,
+        "1": 1233.978515625
+      },
+      "size": {
+        "0": 381.6781005859375,
+        "1": 170.35443115234375
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "You can use this part of the workflow to generate an image of a gradient to use later. You can also use any gradient image from the internet, though.\n\nThe first value (e.g. 0 and 100:) determines the position of the colour in the gradient.\n\nThe second value is the RGB code of the colour.\n\nYou can add as many colours to the scheme as you like!"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 66,
+      "type": "Image Gradient Map",
+      "pos": {
+        "0": 1938.361572265625,
+        "1": 977.0001220703125
+      },
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 44
+        },
+        {
+          "name": "gradient_image",
+          "type": "IMAGE",
+          "link": 43
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            45
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Gradient Map"
+      },
+      "widgets_values": [
+        "true"
+      ]
+    },
+    {
+      "id": 68,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1943.361572265625,
+        "1": 1099
+      },
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 45
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 69,
+      "type": "Note",
+      "pos": {
+        "0": 1952.361572265625,
+        "1": 1487
+      },
+      "size": [
+        281.9011015687306,
+        67.53878338489267
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "You can use this group to test your gradient before you render all the images with it."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 64,
+      "type": "Image Generate Gradient",
+      "pos": {
+        "0": 1234.12451171875,
+        "1": 981.7999877929688
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            43,
+            46
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Generate Gradient"
+      },
+      "widgets_values": [
+        512,
+        512,
+        "horizontal",
+        0,
+        "0:41, 86, 185\n75:250, 98, 33"
+      ]
+    },
+    {
+      "id": 70,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1690.361083984375,
+        "1": 983.0001220703125
+      },
+      "size": [
+        204.27110972475202,
+        230.06442769783666
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 46
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 67,
+      "type": "LoadImage",
+      "pos": {
+        "0": 1238.361083984375,
+        "1": 1231
+      },
+      "size": {
+        "0": 385.37786865234375,
+        "1": 337.3795471191406
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            44
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "119619.jpg",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      14,
+      13,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      15,
+      17,
+      0,
+      14,
+      1,
+      "IMAGE"
+    ],
+    [
+      29,
+      25,
+      0,
+      30,
+      0,
+      "IMAGE"
+    ],
+    [
+      31,
+      30,
+      0,
+      34,
+      0,
+      "IMAGE"
+    ],
+    [
+      32,
+      35,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ],
+    [
+      33,
+      14,
+      0,
+      40,
+      0,
+      "IMAGE"
+    ],
+    [
+      42,
+      56,
+      0,
+      57,
+      0,
+      "IMAGE"
+    ],
+    [
+      43,
+      64,
+      0,
+      66,
+      1,
+      "IMAGE"
+    ],
+    [
+      44,
+      67,
+      0,
+      66,
+      0,
+      "IMAGE"
+    ],
+    [
+      45,
+      66,
+      0,
+      68,
+      0,
+      "IMAGE"
+    ],
+    [
+      46,
+      64,
+      0,
+      70,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Gradient Tester",
+      "bounding": [
+        1225,
+        903,
+        1039,
+        675
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Image Seq to Video",
+      "bounding": [
+        2047,
+        5,
+        573,
+        880
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Depth to Gradient",
+      "bounding": [
+        1001,
+        6,
+        1028,
+        725
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Video to Depth Map",
+      "bounding": [
+        13,
+        11,
+        962,
+        817
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Generate Gradient Image",
+      "bounding": [
+        443,
+        907,
+        760,
+        503
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.37974983358324843,
+      "offset": [
+        734.2519271986775,
+        276.28977693781496
+      ]
+    }
+  },
+  "version": 0.4
+}
