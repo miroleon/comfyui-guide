@@ -1,6 +1,6 @@
 {
   "last_node_id": 42,
-  "last_link_id": 89,
+  "last_link_id": 91,
   "nodes": [
     {
       "id": 12,
@@ -42,45 +42,6 @@
         "Node name for S&R": "VAEEncode"
       },
       "widgets_values": []
-    },
-    {
-      "id": 33,
-      "type": "CannyEdgePreprocessor",
-      "pos": {
-        "0": 879,
-        "1": 465
-      },
-      "size": {
-        "0": 315,
-        "1": 106
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 46
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CannyEdgePreprocessor"
-      },
-      "widgets_values": [
-        255,
-        500,
-        1024
-      ]
     },
     {
       "id": 39,
@@ -197,7 +158,7 @@
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 87
+          "link": 91
         }
       ],
       "outputs": [],
@@ -648,47 +609,6 @@
       ]
     },
     {
-      "id": 29,
-      "type": "DepthAnythingPreprocessor",
-      "pos": {
-        "0": 878,
-        "1": 621
-      },
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 41
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            87,
-            88
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DepthAnythingPreprocessor"
-      },
-      "widgets_values": [
-        "depth_anything_vitl14.pth",
-        512
-      ]
-    },
-    {
       "id": 20,
       "type": "ImageResize+",
       "pos": {
@@ -743,39 +663,6 @@
         "fill / crop",
         "always",
         0
-      ]
-    },
-    {
-      "id": 21,
-      "type": "ControlNetLoader",
-      "pos": {
-        "0": 408,
-        "1": 680
-      },
-      "size": {
-        "0": 315,
-        "1": 58
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CONTROL_NET",
-          "type": "CONTROL_NET",
-          "links": [
-            83
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ControlNetLoader"
-      },
-      "widgets_values": [
-        "depth\\diffusion_pytorch_model.safetensors"
       ]
     },
     {
@@ -835,6 +722,119 @@
         "euler",
         "karras",
         0.6
+      ]
+    },
+    {
+      "id": 21,
+      "type": "ControlNetLoader",
+      "pos": {
+        "0": 408,
+        "1": 680
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            83
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "depth\\diffusion_pytorch_model.safetensors"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "CannyEdgePreprocessor",
+      "pos": {
+        "0": 879,
+        "1": 465
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 46
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CannyEdgePreprocessor"
+      },
+      "widgets_values": [
+        0,
+        255,
+        1024
+      ]
+    },
+    {
+      "id": 29,
+      "type": "DepthAnythingPreprocessor",
+      "pos": {
+        "0": 878,
+        "1": 621
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            88,
+            91
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DepthAnythingPreprocessor"
+      },
+      "widgets_values": [
+        "depth_anything_vits14.pth",
+        512
       ]
     }
   ],
@@ -1000,14 +1000,6 @@
       "IMAGE"
     ],
     [
-      87,
-      29,
-      0,
-      26,
-      0,
-      "IMAGE"
-    ],
-    [
       88,
       29,
       0,
@@ -1022,16 +1014,24 @@
       41,
       0,
       "IMAGE"
+    ],
+    [
+      91,
+      29,
+      0,
+      26,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
     {
-      "title": "controlnet",
+      "title": "Image to image",
       "bounding": [
-        390,
-        37,
-        1321,
-        866
+        876,
+        935,
+        910,
+        599
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1050,12 +1050,12 @@
       "flags": {}
     },
     {
-      "title": "Image to image",
+      "title": "controlnet",
       "bounding": [
-        876,
-        935,
-        910,
-        599
+        390,
+        37,
+        1321,
+        866
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1065,10 +1065,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.42409761837248483,
+      "scale": 0.5644739300537778,
       "offset": [
-        87.48978777904613,
-        89.38161276524694
+        -456.56476502376444,
+        177.66590513637814
       ]
     }
   },

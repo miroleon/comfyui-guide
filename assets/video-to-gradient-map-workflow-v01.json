@@ -1,6 +1,6 @@
 {
-  "last_node_id": 82,
-  "last_link_id": 60,
+  "last_node_id": 84,
+  "last_link_id": 65,
   "nodes": [
     {
       "id": 14,
@@ -14,7 +14,7 @@
         "1": 78
       },
       "flags": {},
-      "order": 22,
+      "order": 18,
       "mode": 4,
       "inputs": [
         {
@@ -153,29 +153,6 @@
       "bgcolor": "#653"
     },
     {
-      "id": 62,
-      "type": "Note",
-      "pos": {
-        "0": 19,
-        "1": 887
-      },
-      "size": {
-        "0": 381.6781005859375,
-        "1": 170.35443115234375
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "General Tip:\nBypass whole groups by right-clicking on the group and selecting \"Bypass Group Nodes\".\nUn-bypass whole groups by right-clicking on the group and selecting \"Set Group Nodes to Always\".\nYou can bypass and un-bypass individual nodes with the shortcut \"Ctrl+B\".\nAlways bypass the groups that you're not using!"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
       "id": 16,
       "type": "SaveImage",
       "pos": {
@@ -187,7 +164,7 @@
         "1": 270
       },
       "flags": {},
-      "order": 17,
+      "order": 15,
       "mode": 4,
       "inputs": [
         {
@@ -214,7 +191,7 @@
         "1": 200
       },
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 4,
       "inputs": [],
       "outputs": [
@@ -239,235 +216,18 @@
       ]
     },
     {
-      "id": 63,
-      "type": "Note",
-      "pos": {
-        "0": 463.998779296875,
-        "1": 1233.978515625
-      },
-      "size": {
-        "0": 381.6781005859375,
-        "1": 170.35443115234375
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "You can use this part of the workflow to generate an image of a gradient to use later. You can also use any gradient image from the internet, though.\n\nThe first value (e.g. 0 and 100:) determines the position of the colour in the gradient.\n\nThe second value is the RGB code of the colour.\n\nYou can add as many colours to the scheme as you like!"
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 68,
-      "type": "PreviewImage",
-      "pos": {
-        "0": 1943.361572265625,
-        "1": 1099
-      },
-      "size": {
-        "0": 210,
-        "1": 246
-      },
-      "flags": {},
-      "order": 25,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 45
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 69,
-      "type": "Note",
-      "pos": {
-        "0": 1952.361572265625,
-        "1": 1487
-      },
-      "size": {
-        "0": 281.9010925292969,
-        "1": 67.53878021240234
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [],
-      "properties": {},
-      "widgets_values": [
-        "You can use this group to test your gradient before you render all the images with it."
-      ],
-      "color": "#432",
-      "bgcolor": "#653"
-    },
-    {
-      "id": 64,
-      "type": "Image Generate Gradient",
-      "pos": {
-        "0": 1234.12451171875,
-        "1": 981.7999877929688
-      },
-      "size": {
-        "0": 400,
-        "1": 200
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            46
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Image Generate Gradient"
-      },
-      "widgets_values": [
-        512,
-        512,
-        "horizontal",
-        0,
-        "0:41, 86, 185\n75:250, 98, 33"
-      ]
-    },
-    {
-      "id": 70,
-      "type": "PreviewImage",
-      "pos": {
-        "0": 1690.361083984375,
-        "1": 983.0001220703125
-      },
-      "size": {
-        "0": 204.27110290527344,
-        "1": 246
-      },
-      "flags": {},
-      "order": 18,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 46
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": []
-    },
-    {
-      "id": 67,
-      "type": "LoadImage",
-      "pos": {
-        "0": 1238.361083984375,
-        "1": 1231
-      },
-      "size": {
-        "0": 385.37786865234375,
-        "1": 337.3795471191406
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 4,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            44
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "frame_00001_.png",
-        "image"
-      ]
-    },
-    {
-      "id": 66,
-      "type": "Image Gradient Map",
-      "pos": {
-        "0": 1938.361572265625,
-        "1": 977.0001220703125
-      },
-      "size": {
-        "0": 315,
-        "1": 78
-      },
-      "flags": {},
-      "order": 19,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 44
-        },
-        {
-          "name": "gradient_image",
-          "type": "IMAGE",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            45
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Image Gradient Map"
-      },
-      "widgets_values": [
-        "true"
-      ]
-    },
-    {
       "id": 25,
       "type": "VHS_LoadVideo",
       "pos": {
         "0": 22.619335174560547,
-        "1": 84.07154846191406
+        "1": 80.11761474609375
       },
-      "size": [
-        247.455078125,
-        419.8884745607613
-      ],
+      "size": {
+        "0": 247.455078125,
+        "1": 286
+      },
       "flags": {},
-      "order": 10,
+      "order": 5,
       "mode": 4,
       "inputs": [
         {
@@ -545,12 +305,12 @@
         "0": 2940,
         "1": 85
       },
-      "size": [
-        228.99571854438818,
-        102
-      ],
+      "size": {
+        "0": 228.99571228027344,
+        "1": 102
+      },
       "flags": {},
-      "order": 24,
+      "order": 20,
       "mode": 4,
       "inputs": [
         {
@@ -590,12 +350,12 @@
         "0": 3184,
         "1": 86
       },
-      "size": [
-        311.47071521907674,
-        270
-      ],
+      "size": {
+        "0": 311.470703125,
+        "1": 270
+      },
       "flags": {},
-      "order": 28,
+      "order": 26,
       "mode": 4,
       "inputs": [
         {
@@ -619,10 +379,10 @@
       },
       "size": [
         266.607177734375,
-        452.8396683673469
+        310
       ],
       "flags": {},
-      "order": 29,
+      "order": 27,
       "mode": 4,
       "inputs": [
         {
@@ -695,7 +455,7 @@
         "1": 270
       },
       "flags": {},
-      "order": 11,
+      "order": 6,
       "mode": 4,
       "inputs": [],
       "outputs": [
@@ -718,7 +478,7 @@
       },
       "widgets_values": [
         "incremental_image",
-        515,
+        517,
         "increment",
         0,
         "Batch 001",
@@ -740,7 +500,7 @@
         "1": 270
       },
       "flags": {},
-      "order": 27,
+      "order": 25,
       "mode": 4,
       "inputs": [
         {
@@ -762,12 +522,12 @@
         "0": 2057,
         "1": 86.38487243652344
       },
-      "size": [
-        266.84625244140625,
-        194
-      ],
+      "size": {
+        "0": 266.84625244140625,
+        "1": 194
+      },
       "flags": {},
-      "order": 12,
+      "order": 7,
       "mode": 4,
       "inputs": [
         {
@@ -828,12 +588,12 @@
         "0": 2643,
         "1": 85
       },
-      "size": [
-        266.84625244140625,
-        194
-      ],
+      "size": {
+        "0": 266.84625244140625,
+        "1": 194
+      },
       "flags": {},
-      "order": 13,
+      "order": 8,
       "mode": 4,
       "inputs": [
         {
@@ -894,12 +654,12 @@
         "0": 2643,
         "1": 326
       },
-      "size": [
-        266.84625244140625,
-        194
-      ],
+      "size": {
+        "0": 266.84625244140625,
+        "1": 194
+      },
       "flags": {},
-      "order": 14,
+      "order": 9,
       "mode": 4,
       "inputs": [
         {
@@ -954,45 +714,6 @@
       }
     },
     {
-      "id": 30,
-      "type": "DepthAnythingPreprocessor",
-      "pos": {
-        "0": 300.61932373046875,
-        "1": 84.07154846191406
-      },
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 20,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 29
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            59
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DepthAnythingPreprocessor"
-      },
-      "widgets_values": [
-        "depth_anything_vitl14.pth",
-        1024
-      ]
-    },
-    {
       "id": 57,
       "type": "VHS_VideoCombine",
       "pos": {
@@ -1001,10 +722,10 @@
       },
       "size": [
         266.607177734375,
-        452.8396683673469
+        310
       ],
       "flags": {},
-      "order": 23,
+      "order": 19,
       "mode": 4,
       "inputs": [
         {
@@ -1070,14 +791,14 @@
       "type": "SaveImage",
       "pos": {
         "0": 650,
-        "1": 86
+        "1": 82.04606628417969
       },
       "size": {
         "0": 315,
         "1": 270
       },
       "flags": {},
-      "order": 26,
+      "order": 23,
       "mode": 4,
       "inputs": [
         {
@@ -1093,56 +814,18 @@
       ]
     },
     {
-      "id": 73,
-      "type": "CannyEdgePreprocessor",
-      "pos": {
-        "0": 301,
-        "1": 495
-      },
-      "size": {
-        "0": 315,
-        "1": 106
-      },
-      "flags": {},
-      "order": 21,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 48
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CannyEdgePreprocessor"
-      },
-      "widgets_values": [
-        0,
-        255,
-        1024
-      ]
-    },
-    {
       "id": 58,
       "type": "Note",
       "pos": {
         "0": 302.61932373046875,
-        "1": 208.07159423828125
+        "1": 204.11766052246094
       },
-      "size": [
-        311.9209755617775,
-        218.32148968244263
-      ],
+      "size": {
+        "0": 311.9209899902344,
+        "1": 218.3214874267578
+      },
       "flags": {},
-      "order": 15,
+      "order": 10,
       "mode": 4,
       "inputs": [],
       "outputs": [],
@@ -1158,20 +841,20 @@
       "type": "SaveImage",
       "pos": {
         "0": 641,
-        "1": 492
+        "1": 490.0460205078125
       },
       "size": {
         "0": 315,
         "1": 58
       },
       "flags": {},
-      "order": 16,
+      "order": 24,
       "mode": 4,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": null
+          "link": 61
         }
       ],
       "outputs": [],
@@ -1179,6 +862,369 @@
       "widgets_values": [
         "canny-01/frame"
       ]
+    },
+    {
+      "id": 73,
+      "type": "CannyEdgePreprocessor",
+      "pos": {
+        "0": 301,
+        "1": 491.0460205078125
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 48
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            61
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CannyEdgePreprocessor"
+      },
+      "widgets_values": [
+        0,
+        255,
+        1024
+      ]
+    },
+    {
+      "id": 64,
+      "type": "Image Generate Gradient",
+      "pos": {
+        "0": 1234.12451171875,
+        "1": 981.7999877929688
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            46,
+            62
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Generate Gradient"
+      },
+      "widgets_values": [
+        512,
+        512,
+        "horizontal",
+        0,
+        "0:41, 86, 185\n75:250, 98, 33"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "DepthAnythingPreprocessor",
+      "pos": {
+        "0": 301,
+        "1": 80.04606628417969
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            59
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DepthAnythingPreprocessor"
+      },
+      "widgets_values": [
+        "depth_anything_vits14.pth",
+        1024
+      ]
+    },
+    {
+      "id": 66,
+      "type": "Image Gradient Map",
+      "pos": {
+        "0": 2131,
+        "1": 984
+      },
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 64
+        },
+        {
+          "name": "gradient_image",
+          "type": "IMAGE",
+          "link": 62
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            45
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Gradient Map"
+      },
+      "widgets_values": [
+        "true"
+      ]
+    },
+    {
+      "id": 68,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 2231,
+        "1": 1125
+      },
+      "size": {
+        "0": 210,
+        "1": 246
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 45
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 67,
+      "type": "LoadImage",
+      "pos": {
+        "0": 1238,
+        "1": 1231
+      },
+      "size": [
+        266.8788864138812,
+        339.6495030005033
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            63
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "sdxl-controlnet-workflow-01.png",
+        "image"
+      ]
+    },
+    {
+      "id": 69,
+      "type": "Note",
+      "pos": {
+        "0": 2182,
+        "1": 1495
+      },
+      "size": {
+        "0": 281.9010925292969,
+        "1": 67.53878021240234
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "You can use this group to test your gradient before you render all the images with it."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 70,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1658,
+        "1": 972
+      },
+      "size": [
+        196.08662150781356,
+        246
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 46
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 83,
+      "type": "DepthAnythingPreprocessor",
+      "pos": {
+        "0": 1535,
+        "1": 1277
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            64,
+            65
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DepthAnythingPreprocessor"
+      },
+      "widgets_values": [
+        "depth_anything_vits14.pth",
+        512
+      ]
+    },
+    {
+      "id": 84,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1875,
+        "1": 1274
+      },
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 65
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 62,
+      "type": "Note",
+      "pos": {
+        "0": 21,
+        "1": 947
+      },
+      "size": {
+        "0": 381.6781005859375,
+        "1": 170.35443115234375
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 4,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "General Tip:\nBypass whole groups by right-clicking on the group and selecting \"Bypass Group Nodes\".\nUn-bypass whole groups by right-clicking on the group and selecting \"Set Group Nodes to Always\".\nYou can bypass and un-bypass individual nodes with the shortcut \"Ctrl+B\".\nAlways bypass the groups that you're not using!"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -1227,14 +1273,6 @@
       56,
       0,
       57,
-      0,
-      "IMAGE"
-    ],
-    [
-      44,
-      67,
-      0,
-      66,
       0,
       "IMAGE"
     ],
@@ -1301,6 +1339,46 @@
       34,
       0,
       "IMAGE"
+    ],
+    [
+      61,
+      73,
+      0,
+      82,
+      0,
+      "IMAGE"
+    ],
+    [
+      62,
+      64,
+      0,
+      66,
+      1,
+      "IMAGE"
+    ],
+    [
+      63,
+      67,
+      0,
+      83,
+      0,
+      "IMAGE"
+    ],
+    [
+      64,
+      83,
+      0,
+      66,
+      0,
+      "IMAGE"
+    ],
+    [
+      65,
+      83,
+      0,
+      84,
+      0,
+      "IMAGE"
     ]
   ],
   "groups": [
@@ -1321,8 +1399,8 @@
       "bounding": [
         1225,
         903,
-        1039,
-        675
+        1254,
+        682
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1345,8 +1423,8 @@
       "bounding": [
         1001,
         6,
-        1028,
-        725
+        1035,
+        883
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1356,9 +1434,9 @@
       "title": "Video to Depth Map",
       "bounding": [
         13,
-        11,
-        962,
-        817
+        7,
+        977,
+        881
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1380,10 +1458,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6209213230591567,
+      "scale": 0.3186308177103567,
       "offset": [
-        -147.9343869340162,
-        -34.91853294163955
+        912.907236847643,
+        569.6417341406711
       ]
     }
   },

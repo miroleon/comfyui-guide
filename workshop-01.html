@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ComfyUI Workshop</title>
+    <meta name="description" content="A guide for ComfyUI, accompanied by a YouTube video.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Reveal.js core CSS from jsDelivr CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+
+    <!-- Reveal.js theme -->
+    <!-- Change 'black.css' to any other theme available in reveal.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css" id="theme">
+
+    <!-- Optional Reveal.js plugins CSS (e.g., for code syntax highlighting) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <section data-background="assets/v12.jpg"></section>
+
+            <section>
+                <section>
+                    <h2>More AI Tutorials</h2>
+                    <iframe width="889" height="500"
+                        src="https://www.youtube-nocookie.com/embed/videoseries?si=NPJKYBvyhTD5_LA_&amp;list=PLib6g3rkWM3k1lAEmRRjXkut6z6eh-0p-"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </section>
+
+                <section>
+                    <h2>The plan for this stream</h2>
+                    <ol>
+                        <li class="fragment">Quick Setup Stability Matrix</li>
+                        <li class="fragment">Getting started with ComfyUI</li>
+                        <li class="fragment">Image to Image Generation for better Results</li>
+                        <li class="fragment">Download, test, and use LoRAs</li>
+                        <li class="fragment">Download and use ControlNets</li>
+                        <li class="fragment">Generate the image from the thumbnail</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Quick Run Through the Requirements and Setup</h2>
+                </section>
+
+                <section>
+                    <h2>What do I need?</h2>
+                    <h3>(Windows/Linux)</h3>
+                    <p>GPU (4GB+ VRAM)<br>RAM (12GB+)<br>20GB+ space</p>
+                </section>
+                <section>
+                    <h2>What do I need?</h2>
+                    <h3>(MacOS)</h3>
+                    <p>Apple Silicon (M1, M2, M3, M4...)<br>RAM (12GB+)<br>20GB+ space</p>
+                </section>
+            </section>
+            <section>
+                <h2>Install Stability Matrix</h2>
+                <p>Search for "Stability Matrix"<br>or click <a href="https://lykos.ai/downloads" target="_blank">this
+                        link</a></p>
+            </section>
+            <section>
+                <section>
+                    <h3>Stable Diffusion 1.5 Model</h3>
+                    <img src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/c1033497-007c-4a73-b812-915c8e32e8fe/anim=false,width=450,optimized=true/26072224-5775713-(masterpiece),%20(extremely%20intricate_1.3),%20(realistic),%20portrait%20of%20a%20girl,%20the%20most%20beautiful%20in%20the%20world,%20(medieval%20armor),%20me.jpeg"
+                        height="400">
+                    <p><a href="https://civitai.com/models/4384/dreamshaper" target="_blank">Dreamshaper 8 on
+                            CivitAI</a></p>
+                </section>
+                <section>
+                    <h3>Stable Diffusion XL Model</h3>
+                    <img src="https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/dc7d6447-0c3f-4a6a-8cb6-8ca63da99861/anim=false,width=450,optimized=true/19-13-19_298026909874012.jpeg"
+                        height="400" alt="">
+                    <p><a href="https://civitai.com/models/119229?modelVersionId=416867" target="_blank">ZavyChromaXL
+                            V6.0 on CivitAI</a></p>
+                </section>
+                <section>
+                    <h3>SD15 Text-to-Image Workflow</h3>
+                    <img src="workflows/Text to Image Workflows (SD15) v0-1.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Or <a
+                            href="workflows/Text to Image Workflows (SD15) v0-1.json"
+                            download="Text to Image Workflows (SD15) v0-1.json" target="_blank">download</a> as JSON</p>
+                </section>
+                <section>
+                    <h3>SDXL Text-to-Image Workflow</h3>
+                    <img src="workflows/Text to Image Workflows (SDXL) v0-1.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Or <a
+                            href="workflows/Text to Image Workflows (SDXL) v0-1.json"
+                            download="Text to Image Workflows (SDXL) v0-1.json" target="_blank">download</a> as JSON</p>
+                </section>
+                <section>
+                    <h3>SD15 Image-to-Image Workflow</h3>
+                    <img src="workflows/Image to Image Workflows (SD15) v0-1.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Or <a
+                            href="workflows/Image to Image Workflows (SD15) v0-1.json"
+                            download="Image to Image Workflows (SD15) v0-1.json" target="_blank">download</a> as JSON
+                    </p>
+                </section>
+                <section>
+                    <h3>SDXL Image-to-Image Workflow</h3>
+                    <img src="workflows/Image to Image Workflows (SDXL) v0-1.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Or <a
+                            href="workflows/Image to Image Workflows (SDXL) v0-1.json"
+                            download="Image to Image Workflows (SDXL) v0-1.json" target="_blank">download</a> as JSON
+                    </p>
+                </section>
+                <section>
+                    <h3>Sources for Reference Images</h3>
+                    <ul>
+                        <li>General Public Domain References</li>
+                        <ul>
+                            <li><a href="https://museo.app/" target="_blank">Museo</a></li>
+                        </ul>
+                        <li>Photographic References</li>
+                        <ul>
+                            <li><a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
+                        </ul>
+                    </ul>
+                </section>
+                <section>
+                    <h3>SD15 ControlNet Workflow</h3>
+                    <img src="workflows/ControlNet Workflow (SD15) v0-1.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Or <a href="workflows/ControlNet Workflow (SD15) v0-1.json"
+                            download="ControlNet Workflow (SD15) v0-1.json" target="_blank">download</a> as JSON</p>
+                </section>
+                <section>
+                    <h3>SDXL ControlNet Workflow</h3>
+                    <img src="workflows/ControlNet Workflow (SDXL) v0-1.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Or <a href="workflows/ControlNet Workflow (SDXL) v0-1.json"
+                            download="ControlNet Workflow (SDXL) v0-1.json" target="_blank">download</a> as JSON</p>
+                </section>
+                <section>
+                    <h3>Sources for ControlNet References</h3>
+                    <ul>
+                        <li>General Public Domain References</li>
+                        <ul>
+                            <li><a href="https://museo.app/" target="_blank">Museo</a></li>
+                        </ul>
+                        <li>Photographic References</li>
+                        <ul>
+                            <li><a href="https://unsplash.com/" target="_blank">Unsplash</a></li>
+                        </ul>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Generating the Image from the Thumbnail</h3>
+                    <img src="assets/livestream-thumbnail-01.png" alt="" height="500">
+                </section>
+                <section>
+                    <h3>Adding a LoRA Model</h3>
+                    <img src="workflows/LoRA Workflow (SDXL) v0-1.png" height="400">
+                    <p style="font-size: 1rem; margin: 0;">Or <a href="workflows/LoRA Workflow (SDXL) v0-1.json"
+                            download="LoRA Workflow (SDXL) v0-1.json" target="_blank">download</a> as JSON</p>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <!-- Reveal.js core JS from jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+
+    <!-- Optional Reveal.js plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+
+    <script>
+        // Initialize Reveal.js
+        Reveal.initialize({
+            hash: true, // Enables URL fragments so you can link to specific slides
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            keyboard: {
+                39: 'next',
+                37: 'prev'
+            },
+            // Optional configuration options
+            slideNumber: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide' // Choose from 'none', 'fade', 'slide', 'convex', 'concave', 'zoom'
+        });
+    </script>
+</body>
+
+</html>

@@ -98,45 +98,6 @@
       ]
     },
     {
-      "id": 33,
-      "type": "CannyEdgePreprocessor",
-      "pos": {
-        "0": 879,
-        "1": 465
-      },
-      "size": {
-        "0": 315,
-        "1": 106
-      },
-      "flags": {},
-      "order": 11,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 46
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CannyEdgePreprocessor"
-      },
-      "widgets_values": [
-        255,
-        500,
-        1024
-      ]
-    },
-    {
       "id": 39,
       "type": "Note",
       "pos": {
@@ -490,80 +451,6 @@
       ]
     },
     {
-      "id": 29,
-      "type": "DepthAnythingPreprocessor",
-      "pos": {
-        "0": 878,
-        "1": 621
-      },
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 41
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            87,
-            88
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DepthAnythingPreprocessor"
-      },
-      "widgets_values": [
-        "depth_anything_vitl14.pth",
-        1024
-      ]
-    },
-    {
-      "id": 21,
-      "type": "ControlNetLoader",
-      "pos": {
-        "0": 408,
-        "1": 680
-      },
-      "size": {
-        "0": 315,
-        "1": 58
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CONTROL_NET",
-          "type": "CONTROL_NET",
-          "links": [
-            83
-          ],
-          "slot_index": 0,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ControlNetLoader"
-      },
-      "widgets_values": [
-        "diffusers_xl_depth_full.safetensors"
-      ]
-    },
-    {
       "id": 38,
       "type": "ControlNetApplyAdvanced",
       "pos": {
@@ -728,7 +615,7 @@
         "1": 320.0395202636719
       },
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -751,7 +638,7 @@
         "1": 314.00006103515625
       },
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -835,6 +722,119 @@
         "dpmpp_3m_sde_gpu",
         "exponential",
         0.9500000000000001
+      ]
+    },
+    {
+      "id": 33,
+      "type": "CannyEdgePreprocessor",
+      "pos": {
+        "0": 879,
+        "1": 465
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 46
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CannyEdgePreprocessor"
+      },
+      "widgets_values": [
+        0,
+        255,
+        1024
+      ]
+    },
+    {
+      "id": 29,
+      "type": "DepthAnythingPreprocessor",
+      "pos": {
+        "0": 878,
+        "1": 621
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            87,
+            88
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DepthAnythingPreprocessor"
+      },
+      "widgets_values": [
+        "depth_anything_vits14.pth",
+        1024
+      ]
+    },
+    {
+      "id": 21,
+      "type": "ControlNetLoader",
+      "pos": {
+        "0": 408,
+        "1": 680
+      },
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            83
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "diffusers_xl_depth_full.safetensors"
       ]
     }
   ],
@@ -1026,12 +1026,12 @@
   ],
   "groups": [
     {
-      "title": "controlnet",
+      "title": "Image to image",
       "bounding": [
-        390,
-        37,
-        1321,
-        866
+        876,
+        935,
+        910,
+        599
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1050,12 +1050,12 @@
       "flags": {}
     },
     {
-      "title": "Image to image",
+      "title": "controlnet",
       "bounding": [
-        876,
-        935,
-        910,
-        599
+        390,
+        37,
+        1321,
+        866
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -1065,10 +1065,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6830134553650705,
+      "scale": 0.6209213230591557,
       "offset": [
-        -766.0476263901727,
-        -535.9755393668827
+        333.7051062349018,
+        -95.88834317715931
       ]
     }
   },
