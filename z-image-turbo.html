@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Z-Image Turbo</title>
+    <meta name="description" content="A guide for ComfyUI, accompanied by a YouTube video.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Reveal.js core CSS from jsDelivr CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+
+    <!-- Reveal.js theme -->
+    <!-- Change 'black.css' to any other theme available in reveal.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/black.css" id="theme">
+
+    <!-- Optional Reveal.js plugins CSS (e.g., for code syntax highlighting) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <section data-background="assets/z-image-01-thumb-01.webp"></section>
+
+            <section>
+                <section>
+                    <h2>More AI Tutorials</h2>
+                    <iframe width="889" height="500"
+                        src="https://www.youtube-nocookie.com/embed/videoseries?si=NPJKYBvyhTD5_LA_&amp;list=PLib6g3rkWM3k1lAEmRRjXkut6z6eh-0p-"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </section>
+
+                <section>
+                    <h2>The plan for this tutorial</h2>
+                    <ol>
+                        <li class="fragment">Quick Setup Stability Matrix</li>
+                        <li class="fragment">Getting started with ComfyUI</li>
+                        <li class="fragment">Downloading Z-Image Turbo models</li>
+                        <li class="fragment">Setting up Z-Image Turbo</li>
+                        <li class="fragment">Generate the image from the thumbnail</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Quick Run Through the Requirements and Setup</h2>
+                </section>
+
+                <section>
+                    <h2>What do I need?</h2>
+                    <h3>(Windows/Linux)</h3>
+                    <p>GPU (4GB+ VRAM)<br>RAM (12GB+)<br>20GB+ space</p>
+                </section>
+                <section>
+                    <h2>What do I need?</h2>
+                    <h3>(MacOS)</h3>
+                    <p>Apple Silicon (M1, M2, M3, M4...)<br>RAM (12GB+)<br>20GB+ space</p>
+                </section>
+            </section>
+            <section>
+                <h2>Install Stability Matrix</h2>
+                <p>Search for "Stability Matrix"<br>or click <a href="https://lykos.ai/downloads" target="_blank">this
+                        link</a></p>
+            </section>
+
+            <section>
+                <h2>Model Downloads</h2>
+            </section>
+
+            <section>
+                <h3>Z-Image Turbo BF16</h3>
+                <p>
+                    Download from the official ComfyUI Repo
+                    (<a
+                        href="https://huggingface.co/Comfy-Org/z_image_turbo/blob/main/split_files/diffusion_models/z_image_turbo_bf16.safetensors">Link</a>)
+                    into your <strong>DiffusionModels</strong> folder
+                    (when using Stability Matrix: <code>Data\Models\DiffusionModels</code>).
+                </p>
+            </section>
+
+            <section>
+                <h3>Qwen 3 4B</h3>
+                <p>
+                    Download from the official ComfyUI Repo
+                    (<a
+                        href="https://huggingface.co/Comfy-Org/z_image_turbo/blob/main/split_files/text_encoders/qwen_3_4b.safetensors">Link</a>)
+                    into your <strong>text_encoders</strong> folder
+                    (when using Stability Matrix: <code>Data\Models\TextEncoders</code>).
+                </p>
+            </section>
+
+            <section>
+                <h3>VAE (Flux VAE)</h3>
+                <p>
+                    Download from the official ComfyUI Repo
+                    (<a
+                        href="https://huggingface.co/Comfy-Org/z_image_turbo/blob/main/split_files/vae/ae.safetensors">Link</a>)
+                    into your <strong>vae</strong> folder
+                    (when using Stability Matrix: <code>Data\Models\VAE</code>).
+                </p>
+            </section>
+
+            <section>
+                <h2>Z-Image Turbo Workflow</h2>
+                <img src="workflows/z-image-turbo-workflow-01.png" height="400">
+                <p style="font-size: 1rem; margin: 0;">...or <a href="workflows/z-image-turbo-workflow-01.json"
+                        download="z-image-turbo-workflow-01.json" target="_blank">download</a> as JSON
+                </p>
+            </section>
+
+            <section>
+                <h3>Reference Image</h3>
+                <img src="https://ids.lib.harvard.edu/mps/18724725?width=3000&height=3000" alt="" height="400">
+                <p style="font-size: 1rem; margin: 0;"><a href="https://hvrd.art/o/55056" target="_blank">Source
+                        Link</a></p>
+            </section>
+        </div>
+    </div>
+
+    <!-- Reveal.js core JS from jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+
+    <!-- Optional Reveal.js plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+
+    <script>
+        // Initialize Reveal.js
+        Reveal.initialize({
+            hash: true, // Enables URL fragments so you can link to specific slides
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            keyboard: {
+                39: 'next',
+                37: 'prev'
+            },
+            // Optional configuration options
+            slideNumber: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide' // Choose from 'none', 'fade', 'slide', 'convex', 'concave', 'zoom'
+        });
+    </script>
+</body>
+
+</html>
