@@ -22,7 +22,7 @@
 
     <div class="reveal">
         <div class="slides">
-            <section data-background="assets/z-image-01-thumb-01.webp"></section>
+            <section data-background="assets/z-image-turbo-gguf-workflow.webp"></section>
 
             <section>
                 <section>
@@ -37,46 +37,44 @@
                 <section>
                     <h2>The plan for this tutorial</h2>
                     <ol>
-                        <li class="fragment">Quick Setup Stability Matrix</li>
-                        <li class="fragment">Getting started with ComfyUI</li>
-                        <li class="fragment">Slower All-in-One Alternative</li>
-                        <li class="fragment">Downloading Z-Image Turbo GGUF models</li>
-                        <li class="fragment">Setting up Z-Image Turbo</li>
-                        <li class="fragment">Generate the image from the thumbnail</li>
+                        <li class="fragment">Introducing the Z-Image Turbo Benchmark</li>
+                        <li class="fragment">Checking all Workflows (AIO, GGUF, FULL)</li>
+                        <li class="fragment">Setting up ComfyUI for GGUF Workflows</li>
+                        <li class="fragment">Generate the Thumbnail from the Video</li>
                     </ol>
                 </section>
-
-                <section>
-                    <h2>Quick Run Through the Requirements and Setup</h2>
-                </section>
-
-                <section>
-                    <h2>What do I need?</h2>
-                    <h3>(Windows/Linux)</h3>
-                    <p>GPU (4GB+ VRAM)<br>RAM (12GB+)<br>20GB+ space</p>
-                </section>
-                <section>
-                    <h2>What do I need?</h2>
-                    <h3>(MacOS)</h3>
-                    <p>Apple Silicon (M1, M2, M3, M4...)<br>RAM (12GB+)<br>20GB+ space</p>
-                </section>
-            </section>
-            <section>
-                <h2>Install Stability Matrix</h2>
-                <p>Search for "Stability Matrix"<br>or click <a href="https://lykos.ai/downloads" target="_blank">this
-                        link</a></p>
             </section>
 
             <section>
-                <h2>Model Downloads</h2>
+                <h2><a href="https://miroleon.github.io/z-image-turbo-benchmark/" target="_blank">Z-Image Turbo
+                        Benchmark</a></h2>
+                <iframe src="https://miroleon.github.io/z-image-turbo-benchmark/" frameborder="0"
+                    style="border-radius: 15px;" width="100%" height="550"></iframe>
+            </section>
+
+            <section>
+                <h2>Reference Image</h2>
+                <img src="assets/RP-P-1954-319-crop.jpg" alt="" height="400">
+                <p style="font-size: 1rem; margin: 0;"><a
+                        href="https://commons.wikimedia.org/wiki/File:Rotsen_in_water,_RP-P-1954-319.jpg"
+                        target="_blank">Source
+                        Link</a></p>
+            </section>
+
+            <section>
+                <h2>Z-Image Turbo Workflow</h2>
+                <img src="workflows/z-image-turbo-gguf-workflow-02.png" height="500">
+                <!-- <p style="font-size: 1rem; margin: 0;">...or <a href="workflows/z-image-turbo-gguf-workflow-02.json"
+                        download="z-image-turbo-gguf-workflow-02.json" target="_blank">download</a> as JSON
+                </p> -->
             </section>
 
             <section>
                 <h3>Z-Image Turbo Q5 K M GGUF</h3>
                 <p>
                     Download from @jayn7 on HuggingFace
-                    (<a
-                        href="https://huggingface.co/jayn7/Z-Image-Turbo-GGUF/blob/main/z_image_turbo-Q5_K_M.gguf" target="_blank">Link</a>)
+                    (<a href="https://huggingface.co/jayn7/Z-Image-Turbo-GGUF/blob/main/z_image_turbo-Q4_K_M.gguf"
+                        target="_blank">Link</a>)
                     into your <strong>DiffusionModels</strong> folder
                     (when using Stability Matrix: <code>Data\Models\DiffusionModels</code>).
                 </p>
@@ -86,8 +84,8 @@
                 <h3>Qwen3 4B UD Q5 K XL GGUF</h3>
                 <p>
                     Download from @unsloth on HuggingFace
-                    (<a
-                        href="https://huggingface.co/unsloth/Qwen3-4B-GGUF/blob/main/Qwen3-4B-UD-Q5_K_XL.gguf" target="_blank">Link</a>)
+                    (<a href="https://huggingface.co/unsloth/Qwen3-4B-GGUF/blob/main/Qwen3-4B-UD-Q5_K_XL.gguf"
+                        target="_blank">Link</a>)
                     into your <strong>text_encoders</strong> folder
                     (when using Stability Matrix: <code>Data\Models\TextEncoders</code>).
                 </p>
@@ -97,27 +95,13 @@
                 <h3>VAE (Flux VAE)</h3>
                 <p>
                     Download from the official ComfyUI Repo
-                    (<a
-                        href="https://huggingface.co/Comfy-Org/z_image_turbo/blob/main/split_files/vae/ae.safetensors" target="_blank">Link</a>)
+                    (<a href="https://huggingface.co/Comfy-Org/z_image_turbo/blob/main/split_files/vae/ae.safetensors"
+                        target="_blank">Link</a>)
                     into your <strong>vae</strong> folder
                     (when using Stability Matrix: <code>Data\Models\VAE</code>).
                 </p>
             </section>
 
-            <section>
-                <h2>Z-Image Turbo Workflow</h2>
-                <img src="workflows/z-image-turbo-workflow-01.png" height="400">
-                <p style="font-size: 1rem; margin: 0;">...or <a href="workflows/z-image-turbo-workflow-01.json"
-                        download="z-image-turbo-workflow-01.json" target="_blank">download</a> as JSON
-                </p>
-            </section>
-
-            <section>
-                <h3>Reference Image</h3>
-                <img src="https://ids.lib.harvard.edu/mps/18724725?width=3000&height=3000" alt="" height="400">
-                <p style="font-size: 1rem; margin: 0;"><a href="https://hvrd.art/o/55056" target="_blank">Source
-                        Link</a></p>
-            </section>
         </div>
     </div>
 
